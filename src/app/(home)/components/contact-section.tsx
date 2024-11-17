@@ -33,10 +33,24 @@ export default function ContactSection() {
     // form.reset();
   }, []);
 
+  const onCopy = useCallback(() => {
+    navigator.clipboard.writeText("itsosmx@gmail.com");
+    toast.success("Email copied to clipboard", { id: "contact-email" });
+  }, []);
+
   return (
-    <div>
-      <p className="section-subtitle">Get in touch</p>
+    <div className="max-w-screen-md">
       <div className="mt-8">
+        <h2 className="text-2xl">Let's collaborate!</h2>
+        <p>
+          Got a project in mind or just a question? Feel free to reach out! For general inquiries, email me at{" "}
+          <span onClick={onCopy} className="font-bold underline cursor-pointer">
+            itsosmx@gmail.com
+          </span>{" "}
+          I’m always open to new opportunities and connections.
+        </p>
+      </div>
+      <div className="mt-14">
         <Form {...form}>
           <form onSubmit={form.handleSubmit(onSubmit)} className="grid grid-cols-3 gap-4">
             <FormField
@@ -46,7 +60,7 @@ export default function ContactSection() {
                 <FormItem>
                   <FormLabel>Name</FormLabel>
                   <FormControl>
-                    <Input {...field} />
+                    <Input {...field} placeholder="Your name.." />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -59,7 +73,7 @@ export default function ContactSection() {
                 <FormItem className="col-span-2">
                   <FormLabel>Email</FormLabel>
                   <FormControl>
-                    <Input {...field} />
+                    <Input {...field} placeholder="example@osmx.me" />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -72,7 +86,7 @@ export default function ContactSection() {
                 <FormItem className="col-span-3">
                   <FormLabel>Message</FormLabel>
                   <FormControl>
-                    <Textarea {...field} />
+                    <Textarea {...field} placeholder="What's up..." rows={5} />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
