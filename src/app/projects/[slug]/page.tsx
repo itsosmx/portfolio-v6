@@ -56,7 +56,7 @@ export default function ProjectPage({ params }: any) {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-background via-card to-background">
+    <div className="min-h-screen">
       {/* Background Elements */}
       <motion.div
         animate={{
@@ -90,7 +90,7 @@ export default function ProjectPage({ params }: any) {
         <motion.div initial={{ opacity: 0, x: -30 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.6 }} className="mb-8">
           <Link
             href="/projects"
-            className="inline-flex items-center gap-2 text-muted-foreground hover:text-accent transition-colors duration-300 group">
+            className="inline-flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors duration-300 group">
             <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform duration-300" />
             Back to Projects
           </Link>
@@ -105,7 +105,7 @@ export default function ProjectPage({ params }: any) {
                   initial={{ opacity: 0, scale: 0.9 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 0.5, delay: 0.2 }}
-                  className="inline-block px-4 py-2 bg-accent/20 rounded-full text-accent-foreground font-medium">
+                  className="inline-block px-4 py-2 bg-accent/20 rounded-full text-primary-foreground font-medium">
                   Project Details
                 </motion.div>{" "}
                 <motion.h1
@@ -119,7 +119,7 @@ export default function ProjectPage({ params }: any) {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: 0.4 }}
-                  className="text-accent-foreground text-lg font-medium">
+                  className="text-primary-foreground text-lg font-medium">
                   {project.headline}
                 </motion.p>
               </div>
@@ -137,7 +137,7 @@ export default function ProjectPage({ params }: any) {
                   { icon: <Zap />, label: "Tools", value: project.toolset?.length || 0 },
                 ].map((stat, indx) => (
                   <div className="bg-card/80 backdrop-blur-sm rounded-lg p-4 border border-border">
-                    <div className="flex items-center gap-2 text-accent-foreground mb-2">
+                    <div className="flex items-center gap-2 text-primary-foreground mb-2">
                       {cloneElement(stat.icon, { className: "w-4 h-4" })}
                       <span className="text-xs font-medium ">{stat.label.toUpperCase()}</span>
                     </div>
@@ -251,7 +251,7 @@ export default function ProjectPage({ params }: any) {
               transition={{ duration: 0.6, delay: 0.7 }}
               className="bg-card/80 backdrop-blur-sm rounded-2xl p-8 border border-border">
               <h2 className="text-2xl font-bold text-foreground mb-6 flex items-center gap-3">
-                <Eye className="w-6 h-6 text-accent" />
+                <Eye className="w-6 h-6 text-primary" />
                 Project Overview
               </h2>
               <div
@@ -266,7 +266,7 @@ export default function ProjectPage({ params }: any) {
               transition={{ duration: 0.6, delay: 0.8 }}
               className="bg-card/80 backdrop-blur-sm rounded-2xl p-8 border border-border">
               <h2 className="text-2xl font-bold text-foreground mb-6 flex items-center gap-3">
-                <Code className="w-6 h-6 text-accent" />
+                <Code className="w-6 h-6 text-primary" />
                 Technologies Used
               </h2>
               <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
@@ -290,7 +290,7 @@ export default function ProjectPage({ params }: any) {
                 transition={{ duration: 0.6, delay: 0.9 }}
                 className="bg-card/80 backdrop-blur-sm rounded-2xl p-8 border border-border">
                 <h2 className="text-2xl font-bold text-foreground mb-6 flex items-center gap-3">
-                  <Zap className="w-6 h-6 text-accent" />
+                  <Zap className="w-6 h-6 text-primary" />
                   Tools & Services
                 </h2>
                 <div className="flex flex-wrap gap-3">
@@ -300,7 +300,7 @@ export default function ProjectPage({ params }: any) {
                       initial={{ opacity: 0, y: 10 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ duration: 0.3, delay: 0.9 + index * 0.05 }}
-                      className="px-4 py-2 bg-accent/20 border border-accent/30 rounded-full text-accent-foreground font-medium hover:bg-accent/30 transition-colors duration-300">
+                      className="px-4 py-2 bg-accent/20 border border-accent/30 rounded-full text-primary-foreground font-medium hover:bg-accent/30 transition-colors duration-300">
                       {tool}
                     </motion.span>
                   ))}

@@ -25,10 +25,10 @@ const nextConfig: NextConfig = {
     minimumCacheTTL: 60,
   },
 
-  compress: true,
-  swcMinify: true,
+  compress: process.env.NODE_ENV === 'production',
+  swcMinify: process.env.NODE_ENV === 'production',
   experimental: {
-    optimizeCss: true,
+    optimizeCss: process.env.NODE_ENV === 'production',
     optimizePackageImports: ['lucide-react', 'framer-motion'],
   },
 

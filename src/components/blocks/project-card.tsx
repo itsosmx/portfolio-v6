@@ -17,7 +17,7 @@ export default function ProjectCard({ index, ...project }: IProjectProps & { ind
       }}
       whileHover={{ y: -8 }}
       className="group relative">
-      <div className="bg-primary/40 backdrop-blur-sm rounded-2xl flex flex-col overflow-hidden border border-border hover:border-primary transition-all duration-500 h-full">
+      <div className="bg-primary/10 backdrop-blur-sm rounded-2xl flex flex-col overflow-hidden border border-primary/20 hover:border-primary transition-all duration-500 h-full">
         {/* Project Image */}
         <div className="relative h-48 overflow-hidden">
           <motion.div whileHover={{ scale: 1.05 }} transition={{ duration: 0.5 }} className="relative w-full h-full">

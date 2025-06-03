@@ -3,29 +3,6 @@
 import React from "react";
 import { motion } from "framer-motion";
 import skills from "@/constants/skills";
-import { Metadata } from "next";
-
-// Note: Since this is a client component, metadata should be moved to a parent server component
-// or add a separate metadata export in a layout.tsx file for this route
-
-// For now, we'll add the metadata export (though it won't work in client components)
-// You should consider making this a server component or moving metadata to layout
-export const metadata: Metadata = {
-  title: "About Me | Your Portfolio",
-  description: "Learn more about my journey as a full-stack developer, my passion for technology, and the experiences that shaped my career in web development.",
-  keywords: "about me, developer story, career journey, professional background, web developer experience, technology passion",
-  openGraph: {
-    title: "About Me | Your Portfolio",
-    description: "Learn more about my journey as a full-stack developer, my passion for technology, and the experiences that shaped my career in web development.",
-    url: "https://osmx.me/about",
-    type: "website",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "About Me | Your Portfolio",
-    description: "Learn more about my journey as a full-stack developer, my passion for technology, and the experiences that shaped my career in web development.",
-  },
-};
 
 export default function AboutPage() {
   function GetMyAge() {
