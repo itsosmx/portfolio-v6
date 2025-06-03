@@ -73,8 +73,6 @@ export default function ContactPage() {
 
   return (
     <section className="py-20 relative overflow-hidden">
-      {/* Background Elements */}
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-slate-900/50 to-transparent" />
       <motion.div
         animate={{
           scale: [1, 1.1, 1],
@@ -99,7 +97,7 @@ export default function ContactPage() {
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5 }}
-            className="inline-block px-4 py-2 bg-accent/20 rounded-full text-accent font-medium">
+            className="inline-block px-4 py-2 bg-accent/20 rounded-full text-primary font-medium">
             Get In Touch
           </motion.div>
 
@@ -260,24 +258,24 @@ export default function ContactPage() {
                       href={method.href}
                       className="flex items-start gap-4 p-6 bg-slate-800/30 backdrop-blur-sm rounded-xl border border-slate-700/30 hover:border-accent/50 transition-all duration-300">
                       <div className="p-3 bg-accent/20 rounded-lg">
-                        <method.icon className="w-6 h-6 text-accent" />
+                        <method.icon className="w-6 h-6 text-primary" />
                       </div>
                       <div className="space-y-1">
-                        <h4 className="text-lg font-semibold text-slate-200 group-hover:text-accent transition-colors duration-300">
+                        <h4 className="text-lg font-semibold text-slate-200 group-hover:text-primary transition-colors duration-300">
                           {method.title}
                         </h4>
-                        <p className="text-accent font-medium">{method.value}</p>
+                        <p className="text-primary font-medium">{method.value}</p>
                         <p className="text-sm text-slate-400">{method.description}</p>
                       </div>
                     </a>
                   ) : (
                     <div className="flex items-start gap-4 p-6 bg-slate-800/30 backdrop-blur-sm rounded-xl border border-slate-700/30">
                       <div className="p-3 bg-accent/20 rounded-lg">
-                        <method.icon className="w-6 h-6 text-accent" />
+                        <method.icon className="w-6 h-6 text-primary" />
                       </div>
                       <div className="space-y-1">
                         <h4 className="text-lg font-semibold text-slate-200">{method.title}</h4>
-                        <p className="text-accent font-medium">{method.value}</p>
+                        <p className="text-primary font-medium">{method.value}</p>
                         <p className="text-sm text-slate-400">{method.description}</p>
                       </div>
                     </div>
