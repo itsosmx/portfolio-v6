@@ -81,7 +81,7 @@ export default function ExperienceSection() {
       case "journey":
         return "text-primary";
       default:
-        return "text-accent";
+        return "text-primary";
     }
   };
 
@@ -101,7 +101,7 @@ export default function ExperienceSection() {
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5 }}
-            className="inline-block px-4 py-2 bg-accent/20 rounded-full text-accent font-medium">
+            className="inline-block px-4 py-2 bg-accent/20 rounded-full text-primary font-medium">
             My Journey
           </motion.div>
 
@@ -167,8 +167,8 @@ export default function ExperienceSection() {
                       </div>
 
                       <div>
-                        <h3 className="text-2xl font-bold text-slate-200 group-hover:text-accent transition-colors duration-300">{exp.title}</h3>
-                        <p className="text-accent font-semibold mt-1">{exp.organization}</p>
+                        <h3 className="text-2xl font-bold text-slate-200 group-hover:text-primary transition-colors duration-300">{exp.title}</h3>
+                        <p className="text-primary font-semibold mt-1">{exp.organization}</p>
                       </div>
                     </div>
 
@@ -178,7 +178,7 @@ export default function ExperienceSection() {
                     {/* Achievements */}
                     <div className="space-y-3">
                       <h4 className="text-slate-200 font-semibold flex items-center gap-2">
-                        <Award className="w-4 h-4 text-accent" />
+                        <Award className="w-4 h-4 text-primary" />
                         Key Achievements
                       </h4>
                       <ul className="grid grid-cols-1 md:grid-cols-2 gap-2">

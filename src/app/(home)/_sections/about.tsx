@@ -39,7 +39,7 @@ export default function AboutSection() {
   ];
 
   return (
-    <section className="py-20 relative overflow-hidden">
+    <section className="py-20 relative">
       <div className="container mx-auto px-4">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Left Content */}
@@ -49,14 +49,15 @@ export default function AboutSection() {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5 }}
-                className="inline-block px-4 py-2 bg-accent/20 rounded-full text-accent font-medium">
+                className="inline-block px-4 py-2 bg-accent/20 rounded-full text-primary font-medium">
                 About Me
               </motion.div>
 
               <motion.h2
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.1 }}                className="text-4xl md:text-5xl font-bold text-foreground">
+                transition={{ duration: 0.5, delay: 0.1 }}
+                className="text-4xl md:text-5xl font-bold text-foreground">
                 Passionate Developer & Problem Solver
               </motion.h2>
 
@@ -65,9 +66,9 @@ export default function AboutSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.2 }}
                 className="text-muted-foreground text-lg leading-relaxed">
-                I'm <span className="text-accent font-semibold">Osama Hussein</span>, a {GetMyAge()}-year-old Computer Science Engineer in Egypt. As a
-                self-taught developer since 2015, I've built everything from Discord bots serving{" "}
-                <span className="text-accent font-semibold">300,000+ users</span> to modern web applications and mobile games.
+                I'm <span className="text-primary font-semibold">Osama Hussein</span>, a {GetMyAge()}-year-old Computer Science Engineer in Egypt. As
+                a self-taught developer since 2015, I've built everything from Discord bots serving{" "}
+                <span className="text-primary font-semibold">300,000+ users</span> to modern web applications and mobile games.
               </motion.p>
             </div>
 
@@ -82,8 +83,9 @@ export default function AboutSection() {
                   key={feature.title}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: 0.4 + index * 0.1 }}                  className="group p-4 bg-card/80 rounded-xl hover:bg-card transition-all duration-300 cursor-pointer">
-                  <feature.icon className="w-8 h-8 text-accent mb-3 group-hover:scale-110 transition-transform duration-300" />
+                  transition={{ duration: 0.5, delay: 0.4 + index * 0.1 }}
+                  className="group p-4 bg-card/80 rounded-xl hover:bg-card transition-all duration-300 cursor-pointer">
+                  <feature.icon className="w-8 h-8 text-primary mb-3 group-hover:scale-110 transition-transform duration-300" />
                   <h3 className="font-semibold text-foreground mb-2">{feature.title}</h3>
                   <p className="text-sm text-muted-foreground leading-relaxed">{feature.description}</p>
                 </motion.div>
@@ -116,7 +118,9 @@ export default function AboutSection() {
                 initial={{ opacity: 0, scale: 0.8 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.8, delay: 0.3 }}
-                className="relative z-10 h-full flex items-center justify-center">                <div className="bg-card/90 backdrop-blur-sm rounded-2xl p-8 max-w-sm w-full border border-border">
+                className="relative z-10 h-full flex items-center justify-center">
+                {" "}
+                <div className="bg-card/90 backdrop-blur-sm rounded-2xl p-8 max-w-sm w-full border border-border">
                   <div className="space-y-4">
                     <div className="flex items-center gap-2 mb-6">
                       <div className="w-3 h-3 rounded-full bg-red-500"></div>
@@ -148,12 +152,13 @@ export default function AboutSection() {
                 animate={{ y: [-10, 10, -10] }}
                 transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
                 className="absolute top-10 right-10 w-16 h-16 bg-accent/20 rounded-full flex items-center justify-center backdrop-blur-sm border border-accent/30">
-                <Code2 className="w-8 h-8 text-accent" />
+                <Code2 className="w-8 h-8 text-primary" />
               </motion.div>
 
               <motion.div
                 animate={{ y: [10, -10, 10] }}
-                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 1 }}                className="absolute bottom-10 left-10 w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center backdrop-blur-sm border border-primary/30">
+                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+                className="absolute bottom-10 left-10 w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center backdrop-blur-sm border border-primary/30">
                 <Gamepad2 className="w-8 h-8 text-primary" />
               </motion.div>
             </div>

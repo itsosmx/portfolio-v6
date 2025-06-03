@@ -79,7 +79,7 @@ export default function ProjectsSection() {
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5 }}
-            className="inline-block px-4 py-2 bg-accent/20 rounded-full text-accent font-medium">
+            className="inline-block px-4 py-2 bg-accent/20 rounded-full text-primary font-medium">
             Featured Work
           </motion.div>
 

@@ -3,10 +3,10 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ExternalLink, Github, Calendar, Code, ArrowLeft, Globe, Zap, Eye, Star, Users, Clock, ChevronLeft, ChevronRight } from "lucide-react";
+import { ExternalLink, Github, Calendar, Code, ArrowLeft, Globe, Zap, Eye, ChevronLeft, ChevronRight } from "lucide-react";
 import { IProjectProps } from "@/types";
 import { cloneElement, use, useEffect, useState } from "react";
-import { getProjectBySlug, getProjects } from "@/data/projects";
+import { getProjects } from "@/data/projects";
 
 export default function ProjectPage({ params }: any) {
   const [project, setProject] = useState<IProjectProps | null>(null);

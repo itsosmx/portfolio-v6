@@ -2,11 +2,12 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-import { ExternalLink, Github, Calendar, Code, Filter, Search, Grid, List, ArrowUpRight } from "lucide-react";
+import { ExternalLink, Github, Calendar, Filter, Search, Grid, List, ArrowUpRight } from "lucide-react";
 import { IProjectProps } from "@/types";
 import { useEffect, useState } from "react";
 import { getProjects } from "@/data/projects";
 import ProjectCard from "@/components/blocks/project-card";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 
 export default function ProjectsPage() {
   const [projects, setProjects] = useState<IProjectProps[]>([]);
@@ -81,7 +82,9 @@ export default function ProjectsPage() {
         delay: index * 0.1,
         ease: "easeOut",
       }}
-      className="group relative">      <div className="bg-card backdrop-blur-sm rounded-xl border border-border hover:border-accent/50 transition-all duration-300 p-6">
+      className="group relative">
+      {" "}
+      <div className="bg-card backdrop-blur-sm rounded-xl border border-border hover:border-accent/50 transition-all duration-300 p-6">
         <div className="flex flex-col lg:flex-row gap-6">
           <div className="relative w-full lg:w-48 h-32 lg:h-auto overflow-hidden rounded-lg flex-shrink-0">
             <Image
@@ -208,7 +211,7 @@ export default function ProjectsPage() {
     </motion.div>
   );
   return (
-    <div className="min-h-screen bg-gradient-to-br from-background via-card to-background">
+    <div className="min-h-screen">
       {/* Background Elements */}
       <motion.div
         animate={{
@@ -243,20 +246,23 @@ export default function ProjectsPage() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           className="text-center space-y-6 mb-12">
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.5 }}
-            className="inline-block px-4 py-2 bg-accent/20 rounded-full text-accent-foreground font-medium">
-            Portfolio
-          </motion.div>          <motion.h1
+          <Link href="/">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.5 }}
+              className="inline-block px-4 py-2 bg-accent/20 rounded-full text-accent-foreground font-medium">
+              Back Home
+            </motion.div>
+          </Link>
+
+          <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="text-4xl md:text-6xl font-bold text-foreground">
+            className="text-4xl md:text-6xl font-bold text-foreground mt-10">
             All Projects
           </motion.h1>
-
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -273,7 +279,9 @@ export default function ProjectsPage() {
           transition={{ duration: 0.6, delay: 0.3 }}
           className="mb-8 space-y-4">
           {/* Search and View Controls */}
-          <div className="flex flex-col md:flex-row gap-4 items-center justify-between">            {/* Search Bar */}
+          <div className="flex flex-col md:flex-row gap-4 items-center justify-between">
+            {" "}
+            {/* Search Bar */}
             <div className="relative w-full md:w-96">
               <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground w-4 h-4" />
               <input
@@ -284,18 +292,20 @@ export default function ProjectsPage() {
                 className="w-full pl-10 pr-4 py-3 bg-card/50 border border-border rounded-lg text-foreground placeholder-muted-foreground focus:border-accent/50 focus:outline-none transition-colors duration-300"
               />
             </div>
-
             {/* View Mode and Sort Controls */}
-            <div className="flex items-center gap-4">              {/* Sort Dropdown */}
-              <select
-                value={sortBy}
-                onChange={(e) => setSortBy(e.target.value as any)}
-                className="px-4 py-2 bg-card/50 border border-border rounded-lg text-foreground focus:border-accent/50 focus:outline-none transition-colors duration-300">
-                <option value="recent">Most Recent</option>
-                <option value="name">Name A-Z</option>
-                <option value="tech">Tech Count</option>
-              </select>
-
+            <div className="flex items-center gap-4">
+              {" "}
+              {/* Sort Dropdown */}
+              <Select value={sortBy} onValueChange={(value) => setSortBy(value as any)}>
+                <SelectTrigger className="w-[180px]">
+                  <SelectValue placeholder="Sort" />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectItem value="recent">Most Recent</SelectItem>
+                  <SelectItem value="name">Name A-Z</SelectItem>
+                  <SelectItem value="tech">Tech Count</SelectItem>
+                </SelectContent>
+              </Select>
               {/* View Mode Toggle */}
               <div className="flex items-center gap-2 p-1 bg-card/50 rounded-lg border border-border">
                 <button
@@ -314,7 +324,8 @@ export default function ProjectsPage() {
                 </button>
               </div>
             </div>
-          </div>          {/* Technology Filter */}
+          </div>{" "}
+          {/* Technology Filter */}
           <div className="flex items-center gap-4 flex-wrap">
             <div className="flex items-center gap-2 text-muted-foreground">
               <Filter className="w-4 h-4" />
@@ -340,7 +351,6 @@ export default function ProjectsPage() {
               ))}
             </div>
           </div>
-
           {/* Results Count */}
           <div className="text-muted-foreground text-sm">
             {loading ? "Loading projects..." : `Showing ${filteredProjects.length} of ${projects.length} projects`}
@@ -356,7 +366,8 @@ export default function ProjectsPage() {
                 .map((_, index) => (
                   <LoadingSkeleton key={index} index={index} isListView={viewMode === "list"} />
                 ))}
-            </div>          ) : filteredProjects.length === 0 ? (
+            </div>
+          ) : filteredProjects.length === 0 ? (
             <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="text-center py-20">
               <div className="text-muted-foreground text-lg mb-4">No projects found</div>
               <div className="text-muted-foreground/70 text-sm">Try adjusting your search query or filters</div>

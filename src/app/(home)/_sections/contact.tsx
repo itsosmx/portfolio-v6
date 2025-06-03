@@ -10,7 +10,7 @@ export default function ContactSection() {
     name: "",
     email: "",
     subject: "",
-    message: ""
+    message: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle");
@@ -18,7 +18,7 @@ export default function ContactSection() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
+
     try {
       const response = await fetch("/api/contact", {
         method: "POST",
@@ -43,9 +43,9 @@ export default function ContactSection() {
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData(prev => ({
+    setFormData((prev) => ({
       ...prev,
-      [e.target.name]: e.target.value
+      [e.target.name]: e.target.value,
     }));
   };
 
@@ -55,20 +55,20 @@ export default function ContactSection() {
       title: "Email",
       value: "itsosmx@gmail.com",
       href: "mailto:itsosmx@gmail.com",
-      description: "Drop me a line anytime"
+      description: "Drop me a line anytime",
     },
     {
       icon: MapPin,
       title: "Location",
       value: "Egypt",
-      description: "Available for remote work"
+      description: "Available for remote work",
     },
     {
       icon: Clock,
       title: "Response Time",
       value: "24 hours",
-      description: "I'll get back to you quickly"
-    }
+      description: "I'll get back to you quickly",
+    },
   ];
 
   return (
@@ -76,14 +76,14 @@ export default function ContactSection() {
       {/* Background Elements */}
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-slate-900/50 to-transparent" />
       <motion.div
-        animate={{ 
+        animate={{
           scale: [1, 1.1, 1],
-          opacity: [0.1, 0.2, 0.1]
+          opacity: [0.1, 0.2, 0.1],
         }}
-        transition={{ 
-          duration: 10, 
-          repeat: Infinity, 
-          ease: "easeInOut" 
+        transition={{
+          duration: 10,
+          repeat: Infinity,
+          ease: "easeInOut",
         }}
         className="absolute top-1/4 left-1/4 w-96 h-96 bg-accent/10 rounded-full blur-3xl"
       />
@@ -94,58 +94,43 @@ export default function ContactSection() {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="text-center space-y-6 mb-16"
-        >
+          className="text-center space-y-6 mb-16">
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5 }}
-            className="inline-block px-4 py-2 bg-accent/20 rounded-full text-accent font-medium"
-          >
+            className="inline-block px-4 py-2 bg-accent/20 rounded-full text-primary font-medium">
             Get In Touch
           </motion.div>
-          
+
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="text-4xl md:text-5xl font-bold text-slate-200"
-          >
+            className="text-4xl md:text-5xl font-bold text-slate-200">
             Let's Work Together
           </motion.h2>
-          
+
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="text-slate-300 max-w-2xl mx-auto text-lg"
-          >
+            className="text-slate-300 max-w-2xl mx-auto text-lg">
             Have a project in mind? I'm always open to discussing new opportunities and creative collaborations.
           </motion.p>
         </motion.div>
 
         <div className="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
           {/* Contact Form */}
-          <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6 }}
-            className="space-y-8"
-          >
+          <motion.div initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.6 }} className="space-y-8">
             <div className="space-y-4">
               <h3 className="text-2xl font-bold text-slate-200">Send Me a Message</h3>
-              <p className="text-slate-400">
-                Fill out the form below and I'll get back to you as soon as possible.
-              </p>
+              <p className="text-slate-400">Fill out the form below and I'll get back to you as soon as possible.</p>
             </div>
 
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: 0.1 }}
-                >
+                <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.1 }}>
                   <label htmlFor="name" className="block text-sm font-medium text-slate-300 mb-2">
                     Name
                   </label>
@@ -161,11 +146,7 @@ export default function ContactSection() {
                   />
                 </motion.div>
 
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: 0.2 }}
-                >
+                <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.2 }}>
                   <label htmlFor="email" className="block text-sm font-medium text-slate-300 mb-2">
                     Email
                   </label>
@@ -182,11 +163,7 @@ export default function ContactSection() {
                 </motion.div>
               </div>
 
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.3 }}
-              >
+              <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.3 }}>
                 <label htmlFor="subject" className="block text-sm font-medium text-slate-300 mb-2">
                   Subject
                 </label>
@@ -202,11 +179,7 @@ export default function ContactSection() {
                 />
               </motion.div>
 
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.4 }}
-              >
+              <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.4 }}>
                 <label htmlFor="message" className="block text-sm font-medium text-slate-300 mb-2">
                   Message
                 </label>
@@ -222,16 +195,11 @@ export default function ContactSection() {
                 />
               </motion.div>
 
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.5 }}
-              >
+              <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.5 }}>
                 <Button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full bg-gradient-to-r from-accent to-purple-500 hover:from-accent/90 hover:to-purple-500/90 text-white font-semibold py-3 px-6 rounded-xl transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed group"
-                >
+                  className="w-full bg-gradient-to-r from-accent to-purple-500 hover:from-accent/90 hover:to-purple-500/90 text-white font-semibold py-3 px-6 rounded-xl transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed group">
                   {isSubmitting ? (
                     <div className="flex items-center gap-2">
                       <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
@@ -251,8 +219,7 @@ export default function ContactSection() {
                 <motion.div
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
-                  className="p-4 bg-green-500/20 border border-green-500/30 rounded-xl text-green-400 text-center"
-                >
+                  className="p-4 bg-green-500/20 border border-green-500/30 rounded-xl text-green-400 text-center">
                   Message sent successfully! I'll get back to you soon.
                 </motion.div>
               )}
@@ -261,8 +228,7 @@ export default function ContactSection() {
                 <motion.div
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
-                  className="p-4 bg-red-500/20 border border-red-500/30 rounded-xl text-red-400 text-center"
-                >
+                  className="p-4 bg-red-500/20 border border-red-500/30 rounded-xl text-red-400 text-center">
                   Sorry, there was an error sending your message. Please try again.
                 </motion.div>
               )}
@@ -274,13 +240,10 @@ export default function ContactSection() {
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="space-y-8"
-          >
+            className="space-y-8">
             <div className="space-y-4">
               <h3 className="text-2xl font-bold text-slate-200">Other Ways to Reach Me</h3>
-              <p className="text-slate-400">
-                Prefer a more direct approach? Here are some alternative ways to get in touch.
-              </p>
+              <p className="text-slate-400">Prefer a more direct approach? Here are some alternative ways to get in touch.</p>
             </div>
 
             {/* Contact Methods */}
@@ -291,32 +254,30 @@ export default function ContactSection() {
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: 0.3 + index * 0.1 }}
-                  className="group"
-                >
+                  className="group">
                   {method.href ? (
                     <a
                       href={method.href}
-                      className="flex items-start gap-4 p-6 bg-slate-800/30 backdrop-blur-sm rounded-xl border border-slate-700/30 hover:border-accent/50 transition-all duration-300"
-                    >
+                      className="flex items-start gap-4 p-6 bg-slate-800/30 backdrop-blur-sm rounded-xl border border-slate-700/30 hover:border-accent/50 transition-all duration-300">
                       <div className="p-3 bg-accent/20 rounded-lg">
-                        <method.icon className="w-6 h-6 text-accent" />
+                        <method.icon className="w-6 h-6 text-primary" />
                       </div>
                       <div className="space-y-1">
-                        <h4 className="text-lg font-semibold text-slate-200 group-hover:text-accent transition-colors duration-300">
+                        <h4 className="text-lg font-semibold text-slate-200 group-hover:text-primary transition-colors duration-300">
                           {method.title}
                         </h4>
-                        <p className="text-accent font-medium">{method.value}</p>
+                        <p className="text-primary font-medium">{method.value}</p>
                         <p className="text-sm text-slate-400">{method.description}</p>
                       </div>
                     </a>
                   ) : (
                     <div className="flex items-start gap-4 p-6 bg-slate-800/30 backdrop-blur-sm rounded-xl border border-slate-700/30">
                       <div className="p-3 bg-accent/20 rounded-lg">
-                        <method.icon className="w-6 h-6 text-accent" />
+                        <method.icon className="w-6 h-6 text-primary" />
                       </div>
                       <div className="space-y-1">
                         <h4 className="text-lg font-semibold text-slate-200">{method.title}</h4>
-                        <p className="text-accent font-medium">{method.value}</p>
+                        <p className="text-primary font-medium">{method.value}</p>
                         <p className="text-sm text-slate-400">{method.description}</p>
                       </div>
                     </div>
@@ -330,23 +291,14 @@ export default function ContactSection() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.6 }}
-              className="space-y-4"
-            >
+              className="space-y-4">
               <h4 className="text-lg font-semibold text-slate-200">Quick Actions</h4>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Link
-                  href="/cv.pdf"
-                  target="_blank"
-                  className={`${buttonVariants({})} flex-1 group`}
-                >
+                <Link href="/cv.pdf" target="_blank" className={`${buttonVariants({})} flex-1 group`}>
                   <span>Download CV</span>
                   <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
                 </Link>
-                <Link
-                  href="https://www.linkedin.com/in/itsosmx"
-                  target="_blank"
-                  className={`${buttonVariants({ variant: "outline" })} flex-1 group`}
-                >
+                <Link href="https://www.linkedin.com/in/itsosmx" target="_blank" className={`${buttonVariants({ variant: "outline" })} flex-1 group`}>
                   <span>LinkedIn</span>
                   <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
                 </Link>

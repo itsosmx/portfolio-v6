@@ -17,8 +17,7 @@ export default function ProjectCard({ index, ...project }: IProjectProps & { ind
       }}
       whileHover={{ y: -8 }}
       className="group relative">
-      {" "}
-      <div className="bg-card/80 backdrop-blur-sm rounded-2xl flex flex-col overflow-hidden border border-border hover:border-accent/50 transition-all duration-500 h-full">
+      <div className="bg-primary/40 backdrop-blur-sm rounded-2xl flex flex-col overflow-hidden border border-border hover:border-primary transition-all duration-500 h-full">
         {/* Project Image */}
         <div className="relative h-48 overflow-hidden">
           <motion.div whileHover={{ scale: 1.05 }} transition={{ duration: 0.5 }} className="relative w-full h-full">
@@ -68,9 +67,7 @@ export default function ProjectCard({ index, ...project }: IProjectProps & { ind
           {/* Header */}{" "}
           <div className="space-y-2 flex-1 ">
             <Link href={`/projects/${project.slug}`}>
-              <h3 className="text-xl font-bold text-foreground transition-colors duration-300 cursor-pointer">
-                {project.title}
-              </h3>
+              <h3 className="text-xl font-bold text-foreground transition-colors duration-300 cursor-pointer">{project.title}</h3>
             </Link>
             <p className="text-muted-foreground text-sm font-medium line-clamp-3">{project.headline}</p>
           </div>
@@ -89,7 +86,7 @@ export default function ProjectCard({ index, ...project }: IProjectProps & { ind
                 </span>
               ))}
               {project.technologies?.length > 5 && (
-                <span className="px-2 py-1 bg-accent rounded-md text-xs text-accent-foreground border border-accent/30">
+                <span className="px-2 py-1 bg-accent rounded-md text-xs text-primary-foreground border border-accent/30">
                   +{project.technologies.length - 5} more
                 </span>
               )}
@@ -104,7 +101,7 @@ export default function ProjectCard({ index, ...project }: IProjectProps & { ind
 
             <Link
               href={`/projects/${project.slug}`}
-              className="text-xs text-accent hover:text-primary transition-colors duration-300 flex items-center gap-1">
+              className="text-xs text-primary hover:text-primary transition-colors duration-300 flex items-center gap-1">
               View Details
               <ArrowUpRight className="w-3 h-3" />
             </Link>
