@@ -136,7 +136,7 @@ export default function ProjectPage({ params }: any) {
                   { icon: <Globe />, label: "Status", value: project.operated === "true" ? "Live" : "Completed" },
                   { icon: <Zap />, label: "Tools", value: project.toolset?.length || 0 },
                 ].map((stat, indx) => (
-                  <div className="bg-card/80 backdrop-blur-sm rounded-lg p-4 border border-border">
+                  <div key={stat.label} className="bg-card/80 backdrop-blur-sm rounded-lg p-4 border border-border">
                     <div className="flex items-center gap-2 text-primary-foreground mb-2">
                       {cloneElement(stat.icon, { className: "w-4 h-4" })}
                       <span className="text-xs font-medium ">{stat.label.toUpperCase()}</span>

@@ -3,6 +3,7 @@ import { Roboto } from "next/font/google";
 import "./globals.css";
 import { generateMetadata, generatePersonJsonLd, generateWebsiteJsonLd } from "@/lib/seo";
 import { GoogleTagManager, GoogleAnalytics } from "@next/third-parties/google";
+import Script from "next/script";
 
 const roboto = Roboto({
   subsets: ["latin"],
@@ -22,18 +23,8 @@ export default function RootLayout({
 
   return (
     <html lang="en" className="scroll-smooth">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(personJsonLd),
-        }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(websiteJsonLd),
-        }}
-      />
+      <Script type="application/ld+json">{JSON.stringify(personJsonLd)}</Script>
+      <Script type="application/ld+json">{JSON.stringify(websiteJsonLd)}</Script>
 
       {/* Preconnect to external domains for better performance */}
       <link rel="preconnect" href="https://fonts.googleapis.com" />
