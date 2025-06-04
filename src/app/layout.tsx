@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Roboto } from "next/font/google";
 import "./globals.css";
 import { generateMetadata, generatePersonJsonLd, generateWebsiteJsonLd } from "@/lib/seo";
+import { GoogleTagManager, GoogleAnalytics } from "@next/third-parties/google";
 
 const roboto = Roboto({
   subsets: ["latin"],
@@ -21,34 +22,32 @@ export default function RootLayout({
 
   return (
     <html lang="en" className="scroll-smooth">
-      <head>
-        {/* Structured Data */}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(personJsonLd),
-          }}
-        />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(websiteJsonLd),
-          }}
-        />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(personJsonLd),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(websiteJsonLd),
+        }}
+      />
 
-        {/* Preconnect to external domains for better performance */}
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+      {/* Preconnect to external domains for better performance */}
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
 
-        {/* DNS prefetch for better performance */}
-        <link rel="dns-prefetch" href="https://skillicons.dev" />
-        <link rel="dns-prefetch" href="https://media.graphassets.com" />
+      {/* DNS prefetch for better performance */}
+      <link rel="dns-prefetch" href="https://skillicons.dev" />
+      <link rel="dns-prefetch" href="https://media.graphassets.com" />
 
-        {/* Favicon and app icons */}
-        <link rel="icon" href="/icon.ico" sizes="32x32" />
-        <link rel="apple-touch-icon" href="/icon.ico" />
-        <link rel="manifest" href="/manifest.json" />
-      </head>
+      {/* Favicon and app icons */}
+      <link rel="icon" href="/icon.ico" sizes="32x32" />
+      <link rel="apple-touch-icon" href="/icon.ico" />
+      <link rel="manifest" href="/manifest.json" />
+      <GoogleAnalytics gaId="G-3TDB6CY5ZL" />
       <body className={`${roboto.variable} antialiased dark`}>{children}</body>
     </html>
   );
