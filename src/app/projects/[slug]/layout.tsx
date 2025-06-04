@@ -3,13 +3,10 @@ import { notFound } from "next/navigation";
 import { getProjects } from "@/data/projects";
 import { generateMetadata as gebMeta } from "@/lib/seo";
 
-type Props = {
-  params: { slug: string };
-};
-
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
+export async function generateMetadata({ params }: any): Promise<Metadata> {
   const projects = await getProjects();
-  const project = projects?.find((project) => project.slug === params.slug);
+  const { params: { slug } } = await params 
+  const project = projects?.find((project) => project.slug === slug);
 
   if (!project) {
     notFound();
