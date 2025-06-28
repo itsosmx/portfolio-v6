@@ -6,6 +6,11 @@ const nextConfig: NextConfig = {
     remotePatterns: [
       {
         protocol: 'https',
+        hostname: "eu-central-1.graphassets.com",
+        pathname: "/**",
+      },
+      {
+        protocol: 'https',
         hostname: 'random.imagecdn.app',
         pathname: "/**"
       },
@@ -18,15 +23,15 @@ const nextConfig: NextConfig = {
         protocol: 'https',
         hostname: "skillicons.dev",
         pathname: "/**",
-      }
+      },
     ],
     // Image optimization for better performance
     // formats: ['image/avif', 'image/webp'],
-    minimumCacheTTL: 60,
+    // minimumCacheTTL: 60,
   },
 
   compress: process.env.NODE_ENV === 'production',
-  swcMinify: process.env.NODE_ENV === 'production',
+  // swcMinify: process.env.NODE_ENV === 'production',
   experimental: {
     optimizeCss: process.env.NODE_ENV === 'production',
     optimizePackageImports: ['lucide-react', 'framer-motion'],
@@ -85,6 +90,7 @@ const nextConfig: NextConfig = {
           },
         ],
       },
+
     ];
   },
 };

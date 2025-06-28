@@ -5,7 +5,7 @@ import { generateMetadata as gebMeta } from "@/lib/seo";
 
 export async function generateMetadata({ params }: any): Promise<Metadata> {
   const projects = await getProjects();
-  const aParams = await params 
+  const aParams = await params;
   const project = projects?.find((project) => project.slug === aParams.slug);
 
   if (!project) {
@@ -20,18 +20,6 @@ export async function generateMetadata({ params }: any): Promise<Metadata> {
     keywords: [project.title.toLowerCase(), ...(project.technologies || []), "web development project", "portfolio project"],
   });
 }
-
-// export async function generateStaticParams() {
-//   const projects = await getProjects();
-
-//   if (!projects) {
-//     return [];
-//   }
-
-//   return projects.map((project) => ({
-//     slug: project.slug,
-//   }));
-// }
 
 export default function ProjectLayout({ children }: { children: React.ReactNode }) {
   return children;
