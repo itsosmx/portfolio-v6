@@ -3,15 +3,15 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ExternalLink, Github, Calendar, Code, ArrowLeft, Globe, Zap, Eye, ChevronLeft, ChevronRight } from "lucide-react";
+import { ExternalLink, Github, Calendar, Code, ArrowLeft, Globe, Zap, Eye } from "lucide-react";
 import { IProjectProps } from "@/types";
 import { cloneElement, use, useEffect, useState } from "react";
 import { getProjects } from "@/data/projects";
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 
 export default function ProjectPage({ params }: any) {
   const [project, setProject] = useState<IProjectProps | null>(null);
   const [loading, setLoading] = useState(true);
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const paramsSlug = use(params) as any;
 
   useEffect(() => {
@@ -46,14 +46,6 @@ export default function ProjectPage({ params }: any) {
 
   const projectImages = project.image || [];
   const hasMultipleImages = projectImages.length > 1;
-
-  const nextImage = () => {
-    setCurrentImageIndex((prev) => (prev + 1) % projectImages.length);
-  };
-
-  const prevImage = () => {
-    setCurrentImageIndex((prev) => (prev - 1 + projectImages.length) % projectImages.length);
-  };
 
   return (
     <div className="min-h-screen">
@@ -182,61 +174,38 @@ export default function ProjectPage({ params }: any) {
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.6, delay: 0.3 }}
               className="relative">
-              {" "}
-              <div className="relative h-96 lg:h-[500px] rounded-2xl overflow-hidden border border-border bg-card/30">
+              <div className="relative h-96 lg:h-[500px] rounded-2xl overflow-hidden border border-border bg-card/30 ">
                 {projectImages.length > 0 ? (
-                  <>
-                    <Image
-                      src={projectImages[currentImageIndex]?.url || project.thumbnail?.url}
-                      alt={`${project.title} - Image ${currentImageIndex + 1}`}
-                      fill
-                      className="object-contain"
-                    />
-
-                    {/* Image Navigation */}
+                  <Carousel className="w-full h-96 lg:h-[500px]">
+                    <CarouselContent className="h-96 lg:h-[500px]">
+                      <CarouselItem  className="h-full">
+                        <div className="relative h-full w-full">
+                          <Image src={project.thumbnail.url} alt={`${project.title} - Image thumbnail`} fill className="object-contain" />
+                        </div>
+                      </CarouselItem>
+                      {projectImages.map((image, index) => (
+                        <CarouselItem key={index} className="h-full">
+                          <div className="relative h-full w-full">
+                            <Image src={image.url} alt={`${project.title} - Image ${index + 1}`} fill className="object-contain" />
+                          </div>
+                        </CarouselItem>
+                      ))}
+                    </CarouselContent>
                     {hasMultipleImages && (
                       <>
-                        <button
-                          onClick={prevImage}
-                          className="absolute left-4 top-1/2 transform -translate-y-1/2 p-3 bg-background/80 hover:bg-card/80 rounded-full transition-colors duration-300 group">
-                          <ChevronLeft className="w-5 h-5 text-foreground group-hover:scale-110 transition-transform duration-200" />
-                        </button>
-                        <button
-                          onClick={nextImage}
-                          className="absolute right-4 top-1/2 transform -translate-y-1/2 p-3 bg-background/80 hover:bg-card/80 rounded-full transition-colors duration-300 group">
-                          <ChevronRight className="w-5 h-5 text-foreground group-hover:scale-110 transition-transform duration-200" />
-                        </button>
-
-                        {/* Image Indicators */}
-                        <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex gap-2">
-                          {projectImages.map((_, index) => (
-                            <button
-                              key={index}
-                              onClick={() => setCurrentImageIndex(index)}
-                              className={`w-2 h-2 rounded-full transition-colors duration-300 ${
-                                index === currentImageIndex ? "bg-accent" : "bg-muted-foreground/30 hover:bg-muted-foreground/50"
-                              }`}
-                            />
-                          ))}
-                        </div>
+                        <CarouselPrevious className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-background/80 hover:bg-card/80 border-border/50" />
+                        <CarouselNext className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-background/80 hover:bg-card/80 border-border/50" />
                       </>
                     )}
-                  </>
+                    {/* Overlay Gradient */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-background/20 via-transparent to-transparent pointer-events-none" />
+                  </Carousel>
                 ) : (
                   <div className="flex items-center justify-center h-full">
                     <div className="text-muted-foreground">No images available</div>
                   </div>
                 )}
-
-                {/* Overlay Gradient */}
-                <div className="absolute inset-0 bg-gradient-to-t from-background/20 via-transparent to-transparent pointer-events-none" />
               </div>
-              {/* Image Counter */}
-              {hasMultipleImages && (
-                <div className="absolute top-4 right-4 px-3 py-1 bg-background/80 rounded-full text-foreground text-sm font-medium">
-                  {currentImageIndex + 1} / {projectImages.length}
-                </div>
-              )}
             </motion.div>
           </div>
         </motion.div>
