@@ -30,7 +30,7 @@ export default function SkillsSection() {
         <div className="relative bg-card/80 backdrop-blur-sm rounded-xl p-6 hover:bg-card transition-all duration-300 border border-border hover:border-accent/50">
           <div className="flex items-center gap-4">
             <motion.div className="relative w-12 h-12 group-hover:scale-110 transition-transform duration-300" whileHover={{ rotate: 5 }}>
-              <Image src={skill.image} className="object-contain" fill alt={skill.name} />
+              <img src={skill.image} className="object-contain" alt={skill.name} />
             </motion.div>
             <div>
               <h3 className="text-lg font-semibold text-foreground group-hover:text-primary transition-colors duration-300">{skill.name}</h3>

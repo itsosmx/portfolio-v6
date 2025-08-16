@@ -21,7 +21,7 @@ export default function ProjectCard({ index, ...project }: IProjectProps & { ind
         {/* Project Image */}
         <div className="relative h-48 overflow-hidden">
           <motion.div whileHover={{ scale: 1.05 }} transition={{ duration: 0.5 }} className="relative w-full h-full">
-            <Image src={project.thumbnail?.url || "/placeholder-project.jpg"} alt={project.title} fill className="object-cover" />
+            <img src={project.thumbnail?.url || "/placeholder-project.jpg"} alt={project.title} className="object-cover" />
             <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/20 to-transparent" />
           </motion.div>
 

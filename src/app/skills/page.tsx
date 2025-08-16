@@ -72,7 +72,7 @@ const SkillCard = ({ skill, index }: { skill: any; index: number }) => {
                 ease: "easeInOut",
               }}
               className="size-5">
-              <Image src="/images/rocket.gif" className="object-contain" fill alt="Featured skill" />
+              <img src="/images/rocket.gif" className="object-contain"  alt="Featured skill" />
             </motion.div>
           </motion.div>
         )}
