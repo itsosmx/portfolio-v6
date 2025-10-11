@@ -76,7 +76,7 @@ export default function HeroSection() {
                 transition={{ duration: 0.6, delay: 0.2 }}
                 className="inline-flex items-center gap-2 px-4 py-2 bg-accent/10 border border-accent/20 rounded-full text-primary font-medium backdrop-blur-sm">
                 <Sparkles className="w-4 h-4" />
-                <span>Available for Work</span>
+                <span>Available for offers</span>
               </motion.div>{" "}
               <motion.div variants={itemVariants} className="text-4xl md:text-5xl font-bold text-foreground">
                 Hello, I'm
