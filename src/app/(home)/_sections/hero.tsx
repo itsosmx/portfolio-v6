@@ -6,6 +6,8 @@ import Link from "next/link";
 import React from "react";
 import { motion } from "framer-motion";
 import { ArrowDown, Download, MessageCircle, Sparkles } from "lucide-react";
+import { differenceInYears } from "date-fns";
+import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
 
 export default function HeroSection() {
   const containerVariants = {
@@ -75,10 +77,10 @@ export default function HeroSection() {
                 className="inline-flex items-center gap-2 px-4 py-2 bg-accent/10 border border-accent/20 rounded-full text-primary font-medium backdrop-blur-sm">
                 <Sparkles className="w-4 h-4" />
                 <span>Available for Work</span>
-              </motion.div>              <motion.div variants={itemVariants} className="text-4xl md:text-5xl font-bold text-foreground">
+              </motion.div>{" "}
+              <motion.div variants={itemVariants} className="text-4xl md:text-5xl font-bold text-foreground">
                 Hello, I'm
               </motion.div>
-
               <motion.div
                 variants={itemVariants}
                 className="text-6xl md:text-7xl font-bold bg-gradient-to-r from-accent to-primary bg-clip-text text-transparent">
@@ -96,14 +98,26 @@ export default function HeroSection() {
                   }}>
                   Osama Hussein
                 </motion.span>
-              </motion.div>              <motion.div variants={itemVariants} className="text-2xl md:text-3xl font-medium text-muted-foreground">
+              </motion.div>{" "}
+              <motion.div variants={itemVariants} className="text-2xl md:text-3xl font-medium text-muted-foreground">
                 Full Stack Developer
               </motion.div>
-            </motion.div>            <motion.p variants={itemVariants} className="text-muted-foreground text-lg max-w-xl leading-relaxed">
+            </motion.div>{" "}
+            <motion.p variants={itemVariants} className="text-muted-foreground text-lg max-w-xl leading-relaxed">
               Crafting digital experiences through clean code and creative solutions. Specializing in web development, mobile apps, and game
-              development with <span className="text-accent font-semibold">9+ years</span> of passion-driven coding.
+              development with{" "}
+              <span className="text-accent/50 underline font-semibold">
+                <Tooltip>
+                  <TooltipTrigger>{differenceInYears(new Date(), new Date("2016-1-1"))}+ years</TooltipTrigger>
+                  <TooltipContent>
+                    Professional Experience +{differenceInYears(new Date(), new Date("2024-6-1"))} Years
+                    <br />
+                    Coding Experience +{differenceInYears(new Date(), new Date("2016-1-1"))} Years
+                  </TooltipContent>
+                </Tooltip>
+              </span>{" "}
+              of passion-driven coding.
             </motion.p>
-
             <motion.div variants={itemVariants} className="flex flex-col sm:flex-row gap-4">
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                 <Link className={`${buttonVariants({})} group flex items-center gap-2`} target="_blank" href="/cv.pdf">
@@ -118,7 +132,6 @@ export default function HeroSection() {
                 </Link>
               </motion.div>
             </motion.div>
-
             <motion.div variants={itemVariants} className="flex gap-6 pt-4">
               {links.social.map((route, index) => (
                 <motion.a
