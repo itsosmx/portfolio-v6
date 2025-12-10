@@ -106,7 +106,7 @@ export default function HeroSection() {
             <motion.p variants={itemVariants} className="text-muted-foreground text-lg max-w-xl leading-relaxed">
               Crafting digital experiences through clean code and creative solutions. Specializing in web development, mobile apps, and game
               development with{" "}
-              <span className="text-accent underline font-semibold">
+              <span className="underline font-semibold">
                 <Tooltip>
                   <TooltipTrigger>{differenceInYears(new Date(), new Date("2024-6-1"))}+ years</TooltipTrigger>
                   <TooltipContent>
