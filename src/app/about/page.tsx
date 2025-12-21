@@ -288,7 +288,7 @@ export default function AboutPage() {
           whileInView="visible"
           viewport={{ once: true }}>
           {[
-            { number: "9+", label: "Years Coding", icon: "💻" },
+            { number: "5+", label: "Years Coding", icon: "💻" },
             { number: `${skills.length}+`, label: "Technologies", icon: "🛠️" },
             { number: "∞", label: "Learning", icon: "📚" },
           ].map((stat, index) => (

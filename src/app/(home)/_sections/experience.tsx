@@ -6,6 +6,26 @@ export default function ExperienceSection() {
   const experiences = [
     {
       type: "work",
+      title: "Part Time Fullstack Developer",
+      organization: "Tafawwaq",
+      location: "Remote",
+      period: "Aug 2024 - Present",
+      description:
+        "Tafawwaq is a one-to-one online education platform that connects students with teachers for private lessons. The platform supports session booking, secure payments, real-time chat, and live video lessons with an interactive whiteboard—all built and maintained independently from scratch.",
+      icon: Users,
+      achievements: [
+        "Designed and developed Tafawwaq end-to-end as a solo developer, covering product architecture, backend, frontend, real-time features, and deployment without relying on a team.",
+        "Implemented a real-time booking and scheduling system",
+        "Integrated secure online payments using Stripe",
+        "Developed live chat functionality using WebSockets",
+        "Built an interactive video session experience with a whiteboard",
+        "Designed scalable backend architecture",
+        "Handled authentication and role-based access control",
+        "Created a modern, responsive frontend with Next.js"
+      ],
+    },
+    {
+      type: "work",
       title: "Fullstack Developer",
       organization: "Makan Design",
       location: "Remote",
@@ -52,7 +72,7 @@ export default function ExperienceSection() {
       period: "2015 - Present",
       description: "Started with HTML/CSS blogging, evolved to full-stack development. Continuously learning and adapting to new technologies.",
       icon: Lightbulb,
-      achievements: ["9+ Years of Coding", "Web to Mobile Development", "Game Development with Unity", "Backend Systems Architecture"],
+      achievements: ["5+ Years of Coding", "Web to Mobile Development", "Game Development with Unity", "Backend Systems Architecture"],
     },
   ];
   const getTypeColor = (type: string) => {
