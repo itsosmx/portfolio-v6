@@ -140,9 +140,8 @@ export default function SkillsSection() {
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.6 }}
-          className="mt-20 grid grid-cols-1 md:grid-cols-3 gap-8">
+          className="mt-20 grid grid-cols-1 md:grid-cols-2 gap-8">
           {[
-            { label: "Years Experience", value: "9+" },
             { label: "Technologies", value: `${visibleSkills.length}+` },
             { label: "Featured Skills", value: visibleSkills.filter((s) => s.featured).length },
           ].map((stat, index) => (

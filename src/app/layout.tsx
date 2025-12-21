@@ -2,8 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Roboto } from "next/font/google";
 import "./globals.css";
 import { generateMetadata, generatePersonJsonLd, generateWebsiteJsonLd } from "@/lib/seo";
-import { GoogleTagManager, GoogleAnalytics } from "@next/third-parties/google";
-import Script from "next/script";
+import { GoogleAnalytics } from "@next/third-parties/google";
 
 const roboto = Roboto({
   subsets: ["latin"],
@@ -23,32 +22,40 @@ export default function RootLayout({
 
   return (
     <html lang="en" className="scroll-smooth">
-      <Script type="application/ld+json">{JSON.stringify(personJsonLd)}</Script>
-      <Script type="application/ld+json">{JSON.stringify(websiteJsonLd)}</Script>
+      <head>
+        {/* Preconnect to external domains for better performance */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
 
-      {/* Preconnect to external domains for better performance */}
-      <link rel="preconnect" href="https://fonts.googleapis.com" />
-      <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-
-      {/* DNS prefetch for better performance */}
-      <link rel="dns-prefetch" href="https://skillicons.dev" />
-      <link rel="dns-prefetch" href="https://media.graphassets.com" />
-
-      {/* Favicon and app icons */}
-      <link rel="icon" href="/icon.ico" sizes="32x32" />
-      <link rel="apple-touch-icon" href="/icon.ico" />
-      <link rel="manifest" href="/manifest.json" />
+        {/* DNS prefetch for better performance */}
+        <link rel="dns-prefetch" href="https://skillicons.dev" />
+        <link rel="dns-prefetch" href="https://media.graphassets.com" />
+      </head>
       <GoogleAnalytics gaId="G-3TDB6CY5ZL" />
-      <body className={`${roboto.variable} antialiased dark`}>{children}</body>
+      <body className={`${roboto.variable} antialiased dark`}>
+        {children}
+
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(personJsonLd),
+          }}></script>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(websiteJsonLd),
+          }}></script>
+      </body>
     </html>
   );
 }
 
 // Enhanced metadata with comprehensive SEO
 export const metadata: Metadata = generateMetadata({
-  title: "",
+  title: "Osama Hussein",
   description:
     "Full-stack developer passionate about creating innovative web applications and user experiences. Explore my portfolio showcasing modern web development projects.",
+  url: "/",
   keywords: ["portfolio", "web development", "react", "next.js", "typescript", "full-stack", "frontend", "backend", "UI/UX", "responsive design"],
 });
 

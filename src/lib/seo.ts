@@ -12,7 +12,7 @@ export interface SEOConfig {
 }
 
 const defaultSEO = {
-  siteName: "OSMX Portfolio",
+  siteName: "Osama Hussein Portfolio",
   siteUrl: "https://osmx.me",
   author: "Osama Hussein",
   twitterHandle: "@itsosmx",
@@ -49,6 +49,12 @@ export function generateMetadata({
     authors: [{ name: defaultSEO.author }],
     creator: defaultSEO.author,
     publisher: defaultSEO.author,
+    manifest: "/manifest.json",
+    icons: {
+      icon: "/icon.ico",
+      apple: "/icon.ico",
+      shortcut: "/icon.ico",
+    },
 
     robots: noIndex
       ? "noindex, nofollow"
@@ -116,14 +122,14 @@ export function generatePersonJsonLd() {
     name: defaultSEO.author,
     url: defaultSEO.siteUrl,
     sameAs: [
-      "https://github.com/yourusername",
-      "https://linkedin.com/in/yourusername",
-      "https://twitter.com/yourusername",
+      "https://github.com/itsosmx",
+      "https://linkedin.com/in/itsosmx",
+      "https://x.com/itsosmx",
     ],
     jobTitle: "Full-Stack Developer",
     worksFor: {
       "@type": "Organization",
-      name: "Your Company",
+      name: "Devlizer",
     },
     description: defaultSEO.description,
   };
@@ -139,11 +145,6 @@ export function generateWebsiteJsonLd() {
     author: {
       "@type": "Person",
       name: defaultSEO.author,
-    },
-    potentialAction: {
-      "@type": "SearchAction",
-      target: `${defaultSEO.siteUrl}/search?q={search_term_string}`,
-      "query-input": "required name=search_term_string",
     },
   };
 }

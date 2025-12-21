@@ -105,18 +105,7 @@ export default function HeroSection() {
             </motion.div>{" "}
             <motion.p variants={itemVariants} className="text-muted-foreground text-lg max-w-xl leading-relaxed">
               Crafting digital experiences through clean code and creative solutions. Specializing in web development, mobile apps, and game
-              development with{" "}
-              <span className="underline font-semibold">
-                <Tooltip>
-                  <TooltipTrigger>{differenceInYears(new Date(), new Date("2024-6-1"))}+ years</TooltipTrigger>
-                  <TooltipContent>
-                    Professional Experience +{differenceInYears(new Date(), new Date("2024-6-1"))} Years
-                    <br />
-                    Coding Experience +{differenceInYears(new Date(), new Date("2016-1-1"))} Years
-                  </TooltipContent>
-                </Tooltip>
-              </span>{" "}
-              of passion-driven coding.
+              development.
             </motion.p>
             <motion.div variants={itemVariants} className="flex flex-col sm:flex-row gap-4">
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>

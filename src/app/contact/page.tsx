@@ -53,8 +53,8 @@ export default function ContactPage() {
     {
       icon: Mail,
       title: "Email",
-      value: "itsosmx@gmail.com",
-      href: "mailto:itsosmx@gmail.com",
+      value: "hi@osmx.me",
+      href: "mailto:hi@osmx.me",
       description: "Drop me a line anytime",
     },
     {

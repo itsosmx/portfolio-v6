@@ -9,10 +9,10 @@ import ContactSection from "./_sections/contact";
 import { generateMetadata as generateSEOMetadata, generatePortfolioJsonLd } from "@/lib/seo";
 
 export const metadata: Metadata = generateSEOMetadata({
-  title: "Home",
-  description:
-    "Welcome to my portfolio! I'm a full-stack developer passionate about creating innovative web applications and exceptional user experiences. Explore my projects, skills, and experience.",
-  keywords: ["home", "portfolio homepage", "developer introduction", "web developer portfolio", "full-stack projects"],
+  title: "Full-Stack Developer Portfolio",
+  description: "Discover Osama Hussein's portfolio featuring modern full-stack web projects, skills, and ways to get in touch.",
+  url: "/",
+  keywords: ["osama hussein", "portfolio", "full-stack developer", "react", "next.js", "typescript", "web projects"],
 });
 
 export default function HomePage() {

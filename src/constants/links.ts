@@ -30,7 +30,7 @@ const links = {
     },
     {
       icon: MailIcon,
-      href: "mailto:itsosmx@gmail.com",
+      href: "mailto:hi@osmx.me",
     },
     {
       icon: TwitterIcon,

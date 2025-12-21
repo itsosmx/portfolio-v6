@@ -68,7 +68,7 @@ export default function AboutSection() {
                 className="text-muted-foreground text-lg leading-relaxed">
                 I'm <span className="text-primary font-semibold">Osama Hussein</span>, a {GetMyAge()}-year-old Computer Science Engineer in Egypt. As
                 a self-taught developer since 2015, I've built everything from Discord bots serving{" "}
-                <span className="text-primary font-semibold">300,000+ users</span> to modern web applications and mobile games.
+                <span className="text-primary font-semibold">300,000+ users</span> to modern web applications and mobile applications.
               </motion.p>
             </div>
 
@@ -135,9 +135,7 @@ export default function AboutSection() {
                       <div className="text-muted-foreground font-mono text-sm pl-4">
                         age: <span className="text-blue-400">{GetMyAge()}</span>,
                       </div>
-                      <div className="text-muted-foreground font-mono text-sm pl-4">
-                        experience: <span className="text-yellow-400">"9+ years"</span>,
-                      </div>
+
                       <div className="text-muted-foreground font-mono text-sm pl-4">
                         passion: <span className="text-yellow-400">"Creating digital magic"</span>
                       </div>
