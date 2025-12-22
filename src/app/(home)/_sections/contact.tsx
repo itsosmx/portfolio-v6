@@ -72,7 +72,7 @@ export default function ContactSection() {
   ];
 
   return (
-    <section className="py-20 relative overflow-hidden">
+    <section className="py-20 relative overflow-hidden" id="contact">
       {/* Background Elements */}
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-slate-900/50 to-transparent" />
       <motion.div
