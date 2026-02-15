@@ -109,7 +109,7 @@ export default function HeroSection() {
             </motion.p>
             <motion.div variants={itemVariants} className="flex flex-col sm:flex-row gap-4">
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                <Link className={`${buttonVariants({})} group flex items-center gap-2`} target="_blank" href="/cv.pdf">
+                <Link className={`${buttonVariants({})} group flex items-center gap-2`} target="_blank" href="/Osama_Hussein_Resume.pdf">
                   <Download className="w-4 h-4 group-hover:animate-bounce" />
                   View Resume
                 </Link>

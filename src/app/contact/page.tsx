@@ -292,7 +292,7 @@ export default function ContactPage() {
               className="space-y-4">
               <h4 className="text-lg font-semibold text-slate-200">Quick Actions</h4>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Link href="/cv.pdf" target="_blank" className={`${buttonVariants({})} flex-1 group`}>
+                <Link href="/Osama_Hussein_Resume.pdf" target="_blank" className={`${buttonVariants({})} flex-1 group`}>
                   <span>Download CV</span>
                   <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
                 </Link>
