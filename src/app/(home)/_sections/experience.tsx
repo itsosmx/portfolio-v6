@@ -6,22 +6,24 @@ export default function ExperienceSection() {
   const experiences = [
     {
       type: "work",
-      title: "Part Time Fullstack Developer",
+      title: "Full Stack Engineer",
       organization: "Tafawwaq",
       location: "Remote",
       period: "Aug 2024 - Present",
       description:
-        "Tafawwaq is a one-to-one online education platform that connects students with teachers for private lessons. The platform supports session booking, secure payments, real-time chat, and live video lessons with an interactive whiteboard—all built and maintained independently from scratch.",
+        "Designed and built Tafawwaq (tafawwaq.com) entirely from scratch — a production-grade, multi-sided marketplace connecting students with private tutors for live 1-on-1 online sessions. Every line of code, every architecture decision, and every system integration was implemented solo.",
       icon: Users,
       achievements: [
-        "Designed and developed Tafawwaq end-to-end as a solo developer, covering product architecture, backend, frontend, real-time features, and deployment without relying on a team.",
-        "Implemented a real-time booking and scheduling system",
-        "Integrated secure online payments using Stripe",
-        "Developed live chat functionality using WebSockets",
-        "Built an interactive video session experience with a whiteboard",
-        "Designed scalable backend architecture",
-        "Handled authentication and role-based access control",
-        "Created a modern, responsive frontend with Next.js"
+        "Designed scalable microservice-oriented architecture with Next.js 16 / React 19 frontend and Node.js / Express.js v5 backend in TypeScript",
+        "Integrated VideoSDK for real-time 1-on-1 tutoring sessions with automated room creation, lifecycle management, and attendance tracking",
+        "Engineered a complete booking lifecycle engine with full history tracking and status transitions",
+        "Integrated Stripe for student checkout with session-based payments and invoice PDF generation",
+        "Implemented Stripe Connect for teacher payouts with a balance ledger system, hold periods, and withdrawal tracking",
+        "Built bidirectional Socket.io layer for live notifications, session state updates, and in-session chat",
+        "Implemented Redis for job queuing and caching",
+        "Built a fully featured admin panel with user management, tutor review, booking oversight, payout management, refund processing, and platform analytics",
+        "Created role-specific dashboards with booking management, billing history, session recordings, notifications, and onboarding flows",
+        "Built a full SEO system with dynamic metadata, JSON-LD structured data, and a built-in blog engine",
       ],
     },
     {
@@ -31,15 +33,18 @@ export default function ExperienceSection() {
       location: "Remote",
       period: "Jul 2024 - Present",
       description:
-        "Leading full-stack development initiatives, optimizing automation pipelines, and creating custom solutions that drive business efficiency and growth.",
+        "Led development of internal platforms, automation systems, and scalable business tools to streamline operations and reduce dependency on third-party SaaS products for a design & build office furniture company.",
       icon: Users,
       achievements: [
-        "Rebuilt automation pipeline reducing costs by 100%",
-        "Increased sync speed by +50% with Node.js optimization",
-        "Developed custom CRM with Jet Admin and Next.js",
-        "Revamped Shopify store themes with modern UI",
-        "Built company portfolio using Webflow",
-        "Streamlined lead management workflows",
+        "Built a custom full-stack CRM platform from scratch as the company's operational backbone — centralizing projects, clients, quotations, vendors, and financial workflows into a single source of truth",
+        "Engineered an advanced quotation engine with versioning, catalogs, payment terms, timelines, secure sharing, and e-signature integration via Signit",
+        "Developed a product catalog with multi-tier pricing, SEO metadata, tagging, and AI-powered multilingual translations",
+        "Built vendor management with multi-currency support, exchange rates, shipping configurations, and project bill linkage",
+        "Developed automation workflows using Make.com to sync products and inventory between Airtable and Shopify, reducing manual operations significantly",
+        "Built a custom Node.js API to synchronize products, orders, and shipment statuses between Airtable and Shopify, replacing multiple paid integrations",
+        "Redesigned and customized Shopify themes using Liquid, removing dependency on several third-party apps through in-house solutions",
+        "Implemented internal CRM workflows using Jet Admin and Next.js with role-based access control",
+        "Developed a custom Next.js file management and quotation platform with a Google Drive–inspired experience for non-technical staff",
       ],
     },
     {
@@ -163,7 +168,7 @@ export default function ExperienceSection() {
                     whileInView={{ scale: 1 }}
                     transition={{ duration: 0.5, delay: index * 0.2 + 0.3 }}
                     className={`w-16 h-16 rounded-full bg-gradient-to-br ${getTypeColor(
-                      exp.type
+                      exp.type,
                     )} backdrop-blur-sm border flex items-center justify-center`}>
                     <exp.icon className={`w-8 h-8 ${getIconColor(exp.type)}`} />
                   </motion.div>
@@ -174,7 +179,7 @@ export default function ExperienceSection() {
                   initial={{ opacity: 0, x: index % 2 === 0 ? 50 : -50 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.6, delay: index * 0.2 + 0.2 }}
-                  className={`flex-1 ml-24 md:ml-0 ${index % 2 === 0 ? "md:pr-16" : "md:pl-16"}`}>
+                  className={`flex-1 ml-24 mt-20 md:ml-0 ${index % 2 === 0 ? "md:pr-16" : "md:pl-16"}`}>
                   <div className="bg-slate-800/30 backdrop-blur-sm rounded-2xl p-8 border border-slate-700/30 hover:border-accent/30 transition-all duration-300 group">
                     {/* Header */}
                     <div className="space-y-4 mb-6">
