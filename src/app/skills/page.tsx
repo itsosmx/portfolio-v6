@@ -225,7 +225,7 @@ const SkillSection = ({ title, skills, sectionIndex }: { title: string; skills: 
 };
 
 export default function Skills() {
-  const visibleSkills = skills.filter((x) => !x.hidden);
+  const visibleSkills = skills
   const frontendSkills = visibleSkills.filter((skill) => skill.section === "front end");
   const backendSkills = visibleSkills.filter((skill) => skill.section === "back end");
   const toolSkills = visibleSkills.filter((skill) => skill.section === "tools");
