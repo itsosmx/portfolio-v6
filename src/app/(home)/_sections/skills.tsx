@@ -1,12 +1,11 @@
 "use client";
 import { motion } from "framer-motion";
-import Image from "next/image";
 import skills from "@/constants/skills";
 import Link from "next/link";
 import { Zap } from "lucide-react";
 
 export default function SkillsSection() {
-  const visibleSkills = skills.filter((x) => !x.hidden);
+  const visibleSkills = skills;
   const frontendSkills = visibleSkills.filter((skill) => skill.section === "front end").slice(0, 6);
   const backendSkills = visibleSkills.filter((skill) => skill.section === "back end").slice(0, 6);
   const toolSkills = visibleSkills.filter((skill) => skill.section === "tools").slice(0, 6);

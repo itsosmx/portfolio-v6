@@ -1,236 +1,165 @@
 export default [
+  // ─── Frontend ───────────────────────────────────────────
   {
-    "icon": "devicon-typescript-plain",
-    "name": "Typescript",
+    "name": "TypeScript",
     "section": "front end",
-    "image": "https://skillicons.dev/icons?i=ts",
     "featured": true,
+    "image": "https://skillicons.dev/icons?i=ts"
   },
   {
-    "icon": "devicon-vitejs-plain",
-    "name": "Vite",
-    "section": "front end",
-    "image": "https://skillicons.dev/icons?i=vite",
-    "featured": true,
-  },
-  {
-    "icon": "devicon-html5-plain",
-    "name": "HTML",
-    "featured": true,
-    "section": "front end",
-    "image": "https://skillicons.dev/icons?i=html"
-  },
-  {
-    "icon": "devicon-javascript-plain",
-    "name": "Javascript",
+    "name": "JavaScript",
     "section": "front end",
     "image": "https://skillicons.dev/icons?i=js"
   },
   {
-    "icon": "devicon-react-original",
     "name": "React",
     "section": "front end",
+    "featured": true,
     "image": "https://skillicons.dev/icons?i=react"
   },
   {
-    "icon": "devicon-react-original",
-    "name": "Next",
+    "name": "Next.js",
+    "id": "NextJs",
     "section": "front end",
     "featured": true,
-    "id": "NextJs",
     "image": "https://skillicons.dev/icons?i=nextjs"
   },
   {
-    "icon": "devicon-css3-plain",
+    "name": "React Native",
+    "id": "ReactNative",
+    "section": "front end",
+    "featured": true,
+    "image": "https://skillicons.dev/icons?i=react"
+  },
+  {
+    "name": "Tailwind",
+    "section": "front end",
+    "featured": true,
+    "image": "https://skillicons.dev/icons?i=tailwind"
+  },
+  {
+    "name": "Vite",
+    "section": "front end",
+    "image": "https://skillicons.dev/icons?i=vite"
+  },
+  {
+    "name": "HTML",
+    "section": "front end",
+    "image": "https://skillicons.dev/icons?i=html"
+  },
+  {
     "name": "CSS",
     "section": "front end",
     "image": "https://skillicons.dev/icons?i=css"
   },
+
+  // ─── Backend ────────────────────────────────────────────
   {
-    "icon": "devicon-tailwindcss-original-wordmark",
-    "name": "Tailwind",
-    "featured": true,
-    "section": "front end",
-    "image": "https://skillicons.dev/icons?i=tailwind"
-  },
-  {
-    "icon": "devicon-materialui-plain",
-    "name": "MUI",
-    "section": "front end",
-    "image": "https://skillicons.dev/icons?i=materialui"
-  },
-  {
-    "icon": "devicon-react-original",
-    "name": "React Native",
-    "id": "ReactNative",
-    "fallback": "Expo",
-    "section": "front end",
-    "image": "https://skillicons.dev/icons?i=react"
-  },
-  {
-    "icon": "devicon-bootstrap-plain",
-    "name": "Bootstrap",
-    "section": "front end",
-    "image": "https://skillicons.dev/icons?i=bootstrap"
-  },
-  {
-    "icon": "devicon-nodejs-plain",
-    "name": "Node",
+    "name": "Node.js",
     "id": "NodeJs",
-    "featured": true,
     "section": "back end",
+    "featured": true,
     "image": "https://skillicons.dev/icons?i=nodejs"
   },
   {
-    "icon": "devicon-graphql-plain",
-    "name": "GraphQL",
-    "section": "back end",
-    "image": "https://skillicons.dev/icons?i=graphql"
-  },
-  {
-    "icon": "devicon-cplusplus-plain",
-    "name": "C++",
-    "section": "back end",
-    "image": "https://skillicons.dev/icons?i=cpp",
-    "hidden": true,
-  },
-  {
-    "icon": "devicon-mongodb-plain",
-    "name": "Mongodb",
-    "featured": true,
-    "id": "mongoose",
-    "section": "back end",
-    "image": "https://skillicons.dev/icons?i=mongodb"
-  },
-  {
-    "icon": "devicon-express-original",
-    "name": "Express",
+    "name": "Express.js",
     "section": "back end",
     "featured": true,
     "image": "https://skillicons.dev/icons?i=express"
   },
   {
-    "icon": "devicon-python-plain",
-    "name": "Python",
+    "name": "MongoDB",
+    "id": "mongoose",
     "section": "back end",
-    "image": "https://skillicons.dev/icons?i=python",
-    "hidden": true,
+    "featured": true,
+    "image": "https://skillicons.dev/icons?i=mongodb"
   },
   {
-    "icon": "devicon-mysql-plain",
-    "name": "MySql",
+    "name": "Prisma",
     "section": "back end",
-    "hidden": true,
-
-    "image": "https://skillicons.dev/icons?i=mysql"
-
+    "image": "https://skillicons.dev/icons?i=prisma"
   },
   {
-    "icon": "devicon-kotlin-plain",
-    "name": "Kotlin",
+    "name": "Redis",
     "section": "back end",
-    "hidden": true,
-    "image": "https://skillicons.dev/icons?i=kotlin"
+    "featured": true,
+    "image": "https://skillicons.dev/icons?i=redis"
   },
   {
-    "icon": "devicon-csharp-plain",
-    "name": "C#",
-    "id": "CSharp",
+    "name": "Socket.IO",
+    "id": "SocketIO",
     "section": "back end",
-    "image": "https://skillicons.dev/icons?i=cs"
+    "image": "https://skillicons.dev/icons?i=socket.io"
   },
   {
-    "icon": "devicon-firebase-plain",
     "name": "Firebase",
     "section": "back end",
     "image": "https://skillicons.dev/icons?i=firebase"
   },
   {
-    "icon": "devicon-dot-net-plain",
-    "name": ".NET",
-    "hidden": true,
+    "name": "C#",
+    "id": "CSharp",
     "section": "back end",
-    "image": "https://skillicons.dev/icons?i=dotnet"
+    "image": "https://skillicons.dev/icons?i=cs"
+  },
+
+  // ─── Tools & Infrastructure ─────────────────────────────
+  {
+    "name": "AWS",
+    "section": "tools",
+    "featured": true,
+    "image": "https://skillicons.dev/icons?i=aws"
   },
   {
-    "icon": "devicon-git-plain",
+    "name": "Docker",
+    "section": "tools",
+    "featured": true,
+    "image": "https://skillicons.dev/icons?i=docker"
+  },
+  {
+    "name": "Nginx",
+    "section": "tools",
+    "image": "https://skillicons.dev/icons?i=nginx"
+  },
+  {
+    "name": "GitHub Actions",
+    "section": "tools",
+    "image": "https://skillicons.dev/icons?i=githubactions"
+  },
+  {
+    "name": "Cloudflare",
+    "section": "tools",
+    "image": "https://skillicons.dev/icons?i=cloudflare"
+  },
+  {
     "name": "Git",
     "section": "tools",
     "image": "https://skillicons.dev/icons?i=git"
   },
   {
-    "icon": "devicon-npm-original-wordmark",
-    "name": "NPM",
+    "name": "GitHub",
     "section": "tools",
-    "image": "https://skillicons.dev/icons?i=npm"
+    "image": "https://skillicons.dev/icons?i=github"
   },
   {
-    "icon": "devicon-unity-original",
-    "name": "Unity",
-    "section": "tools",
-    "image": "https://skillicons.dev/icons?i=unity"
-  },
-  {
-    "icon": "devicon-vscode-plain",
     "name": "VS Code",
     "section": "tools",
     "featured": true,
     "image": "https://skillicons.dev/icons?i=vscode"
   },
   {
-    "icon": "devicon-photoshop-plain",
-    "name": "Photoshop",
-    "hidden": true,
-    "section": "tools",
-    "image": "https://skillicons.dev/icons?i=photoshop"
-  },
-  {
-    "icon": "devicon-github-original",
-    "name": "Github",
-    "section": "tools",
-    "image": "https://skillicons.dev/icons?i=github"
-  },
-  {
-    "icon": "devicon-amazonwebservices-original",
-    "name": "AWS",
-    "hidden": true,
-    "featured": true,
-    "section": "tools",
-    "image": "https://skillicons.dev/icons?i=aws"
-  },
-  {
-    "icon": "devicon-digitalocean-original",
-    "name": "Digital Ocean",
-    "section": "tools",
-    "image": "https://skillicons.dev/icons?i=digitalocean"
-  },
-  {
-    "icon": "devicon-heroku-original",
-    "name": "Heroku",
-    "section": "tools",
-    "image": "https://skillicons.dev/icons?i=heroku"
-  },
-  {
-    "icon": "devicon-figma-plain",
     "name": "Figma",
     "section": "tools",
     "image": "https://skillicons.dev/icons?i=figma"
   },
   {
-    "icon": "devicon-oracle-original",
-    "name": "Oracle",
-    "hidden": true,
+    "name": "Unity",
     "section": "tools",
-    "image": "https://skillicons.dev/icons?i=oracle"
+    "image": "https://skillicons.dev/icons?i=unity"
   },
   {
-    name: "XML",
-    hidden: true,
-    image: "https://skillicons.dev/icons?i=htmx",
-  },
-  {
-    name: "SocketIO",
-    hidden: true,
-    image: "https://skillicons.dev/icons?i=socketio",
+    "name": "Shopify",
+    "section": "tools",
+    "image": "https://skillicons.dev/icons?i=shopify"
   }
 ]

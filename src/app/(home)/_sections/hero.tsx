@@ -6,8 +6,6 @@ import Link from "next/link";
 import React from "react";
 import { motion } from "framer-motion";
 import { ArrowDown, Download, MessageCircle, Sparkles } from "lucide-react";
-import { differenceInYears } from "date-fns";
-import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
 
 export default function HeroSection() {
   const containerVariants = {
@@ -104,8 +102,8 @@ export default function HeroSection() {
               </motion.div>
             </motion.div>{" "}
             <motion.p variants={itemVariants} className="text-muted-foreground text-lg max-w-xl leading-relaxed">
-              Crafting digital experiences through clean code and creative solutions. Specializing in web development, mobile apps, and game
-              development.
+              Building production systems across fintech, edtech, retail, and hiring. I've shipped everything from multi-sided marketplaces to custom
+              CRMs and AI chat tools.
             </motion.p>
             <motion.div variants={itemVariants} className="flex flex-col sm:flex-row gap-4">
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>

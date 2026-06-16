@@ -1,85 +1,66 @@
 "use client";
 import { motion } from "framer-motion";
-import { Calendar, MapPin, GraduationCap, Award, Users, Lightbulb } from "lucide-react";
+import { Calendar, MapPin, GraduationCap, Award, Users, Lightbulb, BriefcaseBusiness } from "lucide-react";
 
 export default function ExperienceSection() {
   const experiences = [
     {
       type: "work",
-      title: "Full Stack Engineer",
+      title: "Full-Stack Engineer",
       organization: "Tafawwaq",
       location: "Remote",
-      period: "Aug 2024 - Present",
+      period: "Jul 2025 - Present",
+      employmentType: "Hourly",
+      icon: BriefcaseBusiness,
       description:
-        "Designed and built Tafawwaq (tafawwaq.com) entirely from scratch — a production-grade, multi-sided marketplace connecting students with private tutors for live 1-on-1 online sessions. Every line of code, every architecture decision, and every system integration was implemented solo.",
-      icon: Users,
+        "Built Tafawwaq from scratch — a multi-sided marketplace connecting students with tutors for live 1-on-1 sessions. Sole engineer across the entire stack.",
       achievements: [
-        "Designed scalable microservice-oriented architecture with Next.js 16 / React 19 frontend and Node.js / Express.js v5 backend in TypeScript",
-        "Integrated VideoSDK for real-time 1-on-1 tutoring sessions with automated room creation, lifecycle management, and attendance tracking",
-        "Engineered a complete booking lifecycle engine with full history tracking and status transitions",
-        "Integrated Stripe for student checkout with session-based payments and invoice PDF generation",
-        "Implemented Stripe Connect for teacher payouts with a balance ledger system, hold periods, and withdrawal tracking",
-        "Built bidirectional Socket.io layer for live notifications, session state updates, and in-session chat",
-        "Implemented Redis for job queuing and caching",
-        "Built a fully featured admin panel with user management, tutor review, booking oversight, payout management, refund processing, and platform analytics",
-        "Created role-specific dashboards with booking management, billing history, session recordings, notifications, and onboarding flows",
-        "Built a full SEO system with dynamic metadata, JSON-LD structured data, and a built-in blog engine",
+        "Next.js frontend with Node.js/Express.js backend, fully in TypeScript, deployed on AWS EC2 with Docker and Nginx",
+        "Integrated VideoSDK for real-time tutoring sessions with automated room creation, lifecycle management, and attendance tracking",
+        "Built a complete booking lifecycle engine with full status history and transition logic",
+        "Stripe checkout for student payments with invoice PDF generation; Stripe Connect for teacher payouts with a balance ledger, hold periods, and withdrawal tracking",
+        "Bidirectional Socket.io layer for live notifications, session state, and in-session chat",
+        "Redis for job queuing and caching",
+        "Admin panel covering user management, tutor review, booking oversight, payout management, refund processing, and platform analytics",
+        "Role-specific dashboards with booking management, billing history, session recordings, notifications, and onboarding flows",
+        "SEO system with dynamic metadata, JSON-LD structured data, and a built-in blog engine",
       ],
     },
     {
       type: "work",
-      title: "Fullstack Developer",
+      title: "Full-Stack Developer",
       organization: "Makan Design",
       location: "Remote",
-      period: "Jul 2024 - Present",
+      period: "Jul 2024 - Apr 2026 (Full-time) • Apr 2026 - Present (Hourly)",
+      employmentType: "Hourly",
+      icon: BriefcaseBusiness,
       description:
-        "Led development of internal platforms, automation systems, and scalable business tools to streamline operations and reduce dependency on third-party SaaS products for a design & build office furniture company.",
-      icon: Users,
+        "Built the company's internal operational backbone — a custom CRM platform and a set of automation systems that replaced fragmented workflows across spreadsheets, Airtable, and third-party SaaS tools.",
       achievements: [
-        "Built a custom full-stack CRM platform from scratch as the company's operational backbone — centralizing projects, clients, quotations, vendors, and financial workflows into a single source of truth",
-        "Engineered an advanced quotation engine with versioning, catalogs, payment terms, timelines, secure sharing, and e-signature integration via Signit",
-        "Developed a product catalog with multi-tier pricing, SEO metadata, tagging, and AI-powered multilingual translations",
-        "Built vendor management with multi-currency support, exchange rates, shipping configurations, and project bill linkage",
-        "Developed automation workflows using Make.com to sync products and inventory between Airtable and Shopify, reducing manual operations significantly",
-        "Built a custom Node.js API to synchronize products, orders, and shipment statuses between Airtable and Shopify, replacing multiple paid integrations",
-        "Redesigned and customized Shopify themes using Liquid, removing dependency on several third-party apps through in-house solutions",
-        "Implemented internal CRM workflows using Jet Admin and Next.js with role-based access control",
-        "Developed a custom Next.js file management and quotation platform with a Google Drive–inspired experience for non-technical staff",
+        "Custom full-stack CRM centralizing projects, clients, quotations, vendors, and financials into one system",
+        "Quotation engine with versioning, product catalogs, payment terms, timelines, secure sharing links, and e-signature via Signit",
+        "Product catalog with multi-tier pricing, SEO metadata, tagging, and AI-powered multilingual translations",
+        "Vendor management with multi-currency support, exchange rates, shipping configs, and project bill linkage",
+        "Custom Node.js API syncing products, orders, and shipment statuses between Airtable and Shopify, replacing multiple paid integrations",
+        "Make.com automation workflows for inventory sync between Airtable and Shopify",
+        "Shopify theme customization using Liquid, eliminating dependency on several third-party apps",
+        "Internal CRM workflows with Jet Admin and Next.js, role-based access control",
+        "Custom file management and quotation platform with a Google Drive-style UX for non-technical staff",
+        "Hosted on AWS EC2 with S3 for file and asset storage",
       ],
     },
     {
       type: "education",
-      title: "Computer Science Engineering",
+      title: "B.S. Computer Science",
       organization: "Nahda University",
-      location: "Egypt",
-      period: "2020 - 2024",
-      description:
-        "Specialized in software engineering, algorithms, and system design. Graduated with comprehensive knowledge in computer science fundamentals.",
+      location: "Beni Suef, Egypt",
       icon: GraduationCap,
-      achievements: ["Focus on Software Engineering", "Algorithm Design & Analysis", "Database Management Systems", "Computer Networks"],
-    },
-    {
-      type: "project",
-      title: "Discord Bot Developer",
-      organization: "Personal Project",
-      location: "Remote",
-      period: "2018 - Present",
-      description:
-        "Developed and maintained Discord bots serving over 300,000 users across multiple servers, handling real-time interactions and complex automation.",
-      icon: Award,
-      achievements: ["300,000+ Active Users", "Real-time Message Processing", "Server Automation Features", "Custom API Integrations"],
-    },
-    {
-      type: "journey",
-      title: "Self-Taught Developer Journey",
-      organization: "Independent Learning",
-      location: "Egypt",
-      period: "2015 - Present",
-      description: "Started with HTML/CSS blogging, evolved to full-stack development. Continuously learning and adapting to new technologies.",
-      icon: Lightbulb,
-      achievements: ["5+ Years of Coding", "Web to Mobile Development", "Game Development with Unity", "Backend Systems Architecture"],
+      period: "2020 - 2024",
+      description: "Graduated with a degree in Computer Science.",
+      achievements: [],
     },
   ];
+
   const getTypeColor = (type: string) => {
     switch (type) {
       case "work":
@@ -193,7 +174,14 @@ export default function ExperienceSection() {
 
                       <div>
                         <h3 className="text-2xl font-bold text-slate-200 group-hover:text-primary transition-colors duration-300">{exp.title}</h3>
-                        <p className="text-primary font-semibold mt-1">{exp.organization}</p>
+                        <div className="flex items-center gap-2 mt-1">
+                          <p className="text-primary font-semibold">{exp.organization}</p>
+                          {exp.employmentType && (
+                            <span className="text-xs px-2 py-0.5 rounded-full bg-slate-700/50 text-slate-300 border border-slate-600/30">
+                              {exp.employmentType}
+                            </span>
+                          )}
+                        </div>
                       </div>
                     </div>
 
@@ -201,25 +189,27 @@ export default function ExperienceSection() {
                     <p className="text-slate-300 leading-relaxed mb-6">{exp.description}</p>
 
                     {/* Achievements */}
-                    <div className="space-y-3">
-                      <h4 className="text-slate-200 font-semibold flex items-center gap-2">
-                        <Award className="w-4 h-4 text-primary" />
-                        Key Achievements
-                      </h4>
-                      <ul className="grid grid-cols-1 md:grid-cols-2 gap-2">
-                        {exp.achievements.map((achievement, i) => (
-                          <motion.li
-                            key={achievement}
-                            initial={{ opacity: 0, x: -20 }}
-                            whileInView={{ opacity: 1, x: 0 }}
-                            transition={{ duration: 0.4, delay: index * 0.2 + i * 0.1 + 0.5 }}
-                            className="flex items-center gap-2 text-slate-300 text-sm">
-                            <div className="w-1.5 h-1.5 rounded-full bg-accent flex-shrink-0" />
-                            {achievement}
-                          </motion.li>
-                        ))}
-                      </ul>
-                    </div>
+                    {!!exp.achievements.length && (
+                      <div className="space-y-3">
+                        <h4 className="text-slate-200 font-semibold flex items-center gap-2">
+                          <Award className="w-4 h-4 text-primary" />
+                          Key Achievements
+                        </h4>
+                        <ul className="grid grid-cols-1 md:grid-cols-2 gap-2">
+                          {exp.achievements.map((achievement, i) => (
+                            <motion.li
+                              key={achievement}
+                              initial={{ opacity: 0, x: -20 }}
+                              whileInView={{ opacity: 1, x: 0 }}
+                              transition={{ duration: 0.4, delay: index * 0.2 + i * 0.1 + 0.5 }}
+                              className="flex items-center gap-2 text-slate-300 text-sm">
+                              <div className="w-1.5 h-1.5 rounded-full bg-accent flex-shrink-0" />
+                              {achievement}
+                            </motion.li>
+                          ))}
+                        </ul>
+                      </div>
+                    )}
 
                     {/* Hover Glow Effect */}
                     <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-accent/0 via-accent/5 to-purple-500/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />

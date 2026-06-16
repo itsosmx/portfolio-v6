@@ -1,4 +1,4 @@
-import type { Metadata, Viewport } from "next";
+import type { Metadata } from "next";
 import { Roboto } from "next/font/google";
 import "./globals.css";
 import { generateMetadata, generatePersonJsonLd, generateWebsiteJsonLd } from "@/lib/seo";
@@ -60,13 +60,4 @@ export const metadata: Metadata = generateMetadata({
 });
 
 // Viewport configuration for mobile optimization
-export const viewport: Viewport = {
-  width: "device-width",
-  initialScale: 1,
-  maximumScale: 5,
-  userScalable: true,
-  themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#ffffff" },
-    { media: "(prefers-color-scheme: dark)", color: "#000000" },
-  ],
-};
+export { defaultViewport as viewport } from "@/lib/seo";

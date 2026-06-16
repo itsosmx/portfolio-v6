@@ -1,6 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
-import { Code2, Gamepad2, Globe, Smartphone } from "lucide-react";
+import { Briefcase, Layers, Rocket, Sparkles } from "lucide-react";
 
 export default function AboutSection() {
   const GetMyAge = () => {
@@ -17,24 +17,24 @@ export default function AboutSection() {
 
   const features = [
     {
-      icon: Globe,
-      title: "Web Development",
-      description: "Creating modern, responsive web applications with cutting-edge technologies",
+      icon: Rocket,
+      title: "SaaS Products",
+      description: "Full product development from architecture to launch. APIs, dashboards, payments, deployment.",
     },
     {
-      icon: Smartphone,
-      title: "Mobile Apps",
-      description: "Building cross-platform mobile applications with React Native",
+      icon: Layers,
+      title: "Marketplaces & Platforms",
+      description: "Multi-sided systems with booking engines, payouts, real-time features, and admin tooling.",
     },
     {
-      icon: Gamepad2,
-      title: "Game Development",
-      description: "Developing engaging games and interactive experiences with Unity",
+      icon: Sparkles,
+      title: "AI-Powered Tools",
+      description: "Chatbots, resume screeners, content automation. Integrated with OpenAI and built to serve real users.",
     },
     {
-      icon: Code2,
-      title: "Backend Systems",
-      description: "Architecting scalable server-side solutions and APIs",
+      icon: Briefcase,
+      title: "Internal Business Tools",
+      description: "Custom CRMs, quotation systems, ops platforms. Replace your spreadsheets and duct-tape SaaS stack.",
     },
   ];
 
@@ -58,7 +58,7 @@ export default function AboutSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.1 }}
                 className="text-4xl md:text-5xl font-bold text-foreground">
-                Passionate Developer & Problem Solver
+                Builder. Founder. Full-Stack Developer.
               </motion.h2>
 
               <motion.p
@@ -66,9 +66,8 @@ export default function AboutSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.2 }}
                 className="text-muted-foreground text-lg leading-relaxed">
-                I'm <span className="text-primary font-semibold">Osama Hussein</span>, a {GetMyAge()}-year-old Computer Science Engineer in Egypt. As
-                a self-taught developer since 2015, I've built everything from Discord bots serving{" "}
-                <span className="text-primary font-semibold">300,000+ users</span> to modern web applications and mobile applications.
+                I'm <span className="text-primary font-semibold">Osama Hussein</span>, a {GetMyAge()}-year-old full-stack developer based in Egypt. I
+                build SaaS platforms, marketplaces, and internal tools end to end, from architecture to deployment, mostly independently.
               </motion.p>
             </div>
 
@@ -150,14 +149,14 @@ export default function AboutSection() {
                 animate={{ y: [-10, 10, -10] }}
                 transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
                 className="absolute top-10 right-10 w-16 h-16 bg-accent/20 rounded-full flex items-center justify-center backdrop-blur-sm border border-accent/30">
-                <Code2 className="w-8 h-8 text-primary" />
+                <Rocket className="w-8 h-8 text-primary" />
               </motion.div>
 
               <motion.div
                 animate={{ y: [10, -10, 10] }}
                 transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 1 }}
                 className="absolute bottom-10 left-10 w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center backdrop-blur-sm border border-primary/30">
-                <Gamepad2 className="w-8 h-8 text-primary" />
+                <Sparkles className="w-8 h-8 text-primary" />
               </motion.div>
             </div>
           </motion.div>

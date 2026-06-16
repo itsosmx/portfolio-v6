@@ -63,12 +63,6 @@ export default function ContactSection() {
       value: "Egypt",
       description: "Available for remote work",
     },
-    {
-      icon: Clock,
-      title: "Response Time",
-      value: "24 hours",
-      description: "I'll get back to you quickly",
-    },
   ];
 
   return (
