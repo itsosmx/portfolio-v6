@@ -293,7 +293,7 @@ export default function ProjectPage({ params }: any) {
                   <span className="text-muted-foreground">Start Developed At</span>
                   <span className="text-foreground">
                     {project.startedDevelopmentAt
-                      ? format(new Date(project.startedDevelopmentAt), "yyyy-MMM")
+                      ? format(new Date(project.startedDevelopmentAt), "MMM yyyy")
                       : new Date(project.developedAt).toLocaleDateString()}
                   </span>
                 </div>
@@ -301,18 +301,8 @@ export default function ProjectPage({ params }: any) {
                   <span className="text-muted-foreground">Shipped At</span>
                   <span className="text-foreground">
                     {project.endedDevelopmentAt
-                      ? format(new Date(project.endedDevelopmentAt), "yyyy-MMM")
+                      ? format(new Date(project.endedDevelopmentAt), "MMM yyyy")
                       : new Date(project.createdAt).toLocaleDateString()}
-                  </span>
-                </div>
-                <div className="flex items-center justify-between py-2 border-b border-border">
-                  <span className="text-muted-foreground">Last Updated</span>
-                  <span className="text-foreground">{new Date(project.updatedAt).toLocaleDateString()}</span>
-                </div>
-                <div className="flex items-center justify-between py-2">
-                  <span className="text-muted-foreground">Status</span>
-                  <span className={`font-medium ${project.operated === "true" ? "text-green-400" : "text-blue-400"}`}>
-                    {project.operated === "true" ? "Live & Operational" : "Completed"}
                   </span>
                 </div>
               </div>
