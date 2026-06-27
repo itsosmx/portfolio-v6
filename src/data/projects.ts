@@ -7,36 +7,39 @@ const endpoint = process.env.GRAPHQL_ENDPOINT as string;
 export async function getProjects() {
   try {
     const query = gql`
-    query Projects {
-      projectsIdConnection(orderBy: developedAt_DESC) {
-        edges {
-          node {
-            title
-            github
-            createdAt
-            description {
-              html
-              text
+      query Projects {
+        projectsIdConnection(orderBy: developedAt_DESC) {
+          edges {
+            node {
+              title
+              github
+              createdAt
+              description {
+                html
+                text
+              }
+              headline
+              id
+              developedAt
+              content
+              startedDevelopmentAt
+              endedDevelopmentAt
+              demo
+              slug
+              technologies
+              thumbnail {
+                url
+              }
+              image {
+                url
+              }
+              toolset
+              updatedAt
+              operated
             }
-            headline
-            id
-            developedAt
-            demo
-            slug
-            technologies
-            thumbnail {
-              url
-            }
-            image {
-              url
-            }
-            toolset
-            updatedAt
-            operated
           }
         }
       }
-    }
     `
     const data = await request(endpoint, query);
     //@ts-ignore
@@ -63,6 +66,9 @@ export async function getProjectBySlug(slug: string) {
             headline
             id
             developedAt
+            content
+            startedDevelopmentAt
+            endedDevelopmentAt
             demo
             slug
             technologies

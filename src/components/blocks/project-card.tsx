@@ -1,8 +1,8 @@
 import { IProjectProps } from "@/types";
 import React from "react";
-import Image from "next/image";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import { format } from "date-fns";
 import { ArrowUpRight, Calendar, Code, ExternalLink, Github } from "lucide-react";
 
 export default function ProjectCard({ index, ...project }: IProjectProps & { index: number }) {
@@ -96,7 +96,11 @@ export default function ProjectCard({ index, ...project }: IProjectProps & { ind
           <div className="flex items-center justify-between pt-4 border-t border-border">
             <div className="flex items-center gap-2 text-muted-foreground text-xs">
               <Calendar className="w-3 h-3" />
-              <span>{new Date(project.developedAt).getFullYear()}</span>
+              <span>
+                {project.startedDevelopmentAt
+                  ? format(new Date(project.startedDevelopmentAt), "yyyy MMM")
+                  : format(new Date(project.developedAt), "yyyy MMM")}
+              </span>
             </div>
 
             <Link

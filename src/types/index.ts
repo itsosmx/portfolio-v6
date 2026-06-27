@@ -12,6 +12,9 @@ export interface IProjectProps {
   headline: string;
   id: string;
   developedAt: string;
+  startedDevelopmentAt: string;
+  endedDevelopmentAt: string;
+  content: string;
   technologies: string[];
   slug: string;
   demo: string;

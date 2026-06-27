@@ -8,6 +8,7 @@ import { IProjectProps } from "@/types";
 import { cloneElement, use, useEffect, useState } from "react";
 import { getProjects } from "@/data/projects";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
+import { format } from "date-fns";
 
 export default function ProjectPage({ params }: any) {
   const [project, setProject] = useState<IProjectProps | null>(null);
@@ -178,7 +179,7 @@ export default function ProjectPage({ params }: any) {
                 {projectImages.length > 0 ? (
                   <Carousel className="w-full h-96 lg:h-[500px]">
                     <CarouselContent className="h-96 lg:h-[500px]">
-                      <CarouselItem  className="h-full">
+                      <CarouselItem className="h-full">
                         <div className="relative h-full w-full">
                           <Image src={project.thumbnail.url} alt={`${project.title} - Image thumbnail`} fill className="object-contain" />
                         </div>
@@ -289,12 +290,20 @@ export default function ProjectPage({ params }: any) {
               <h3 className="text-lg font-bold text-foreground mb-4">Project Info</h3>
               <div className="space-y-4">
                 <div className="flex items-center justify-between py-2 border-b border-border">
-                  <span className="text-muted-foreground">Created</span>
-                  <span className="text-foreground">{new Date(project.createdAt).toLocaleDateString()}</span>
+                  <span className="text-muted-foreground">Start Developed At</span>
+                  <span className="text-foreground">
+                    {project.startedDevelopmentAt
+                      ? format(new Date(project.startedDevelopmentAt), "yyyy-MMM")
+                      : new Date(project.developedAt).toLocaleDateString()}
+                  </span>
                 </div>
                 <div className="flex items-center justify-between py-2 border-b border-border">
-                  <span className="text-muted-foreground">Developed</span>
-                  <span className="text-foreground">{new Date(project.developedAt).toLocaleDateString()}</span>
+                  <span className="text-muted-foreground">Shipped At</span>
+                  <span className="text-foreground">
+                    {project.endedDevelopmentAt
+                      ? format(new Date(project.endedDevelopmentAt), "yyyy-MMM")
+                      : new Date(project.createdAt).toLocaleDateString()}
+                  </span>
                 </div>
                 <div className="flex items-center justify-between py-2 border-b border-border">
                   <span className="text-muted-foreground">Last Updated</span>
